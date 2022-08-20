@@ -141,7 +141,7 @@ class Program
                 SemanticModel targetModel = targetComp.GetSemanticModel(currentRoot.SyntaxTree);
 
                 ISymbol targetSymbol = targetModel.GetDeclaredSymbol(targetObject);
-               
+
 
                 if (targetSymbol != null)
                 {
@@ -149,7 +149,7 @@ class Program
                     {
 
                         //  if (!targetSymbol.IsOverride && !targetSymbol.IsImplicitlyDeclared && !targetSymbol.Name.ToLower().Contains("dispose"))
-                        if (!targetSymbol.IsOverride  && !targetSymbol.Name.ToLower().Contains("dispose"))
+                        if (!targetSymbol.IsOverride && !targetSymbol.Name.ToLower().Contains("dispose"))
                         {
                             //Generate random nale
                             string newName = "_" + Guid.NewGuid().ToString().Replace("-", "");
@@ -401,7 +401,7 @@ Example: ./RosFuscator.exe /path/to/target/solution/SeatBelt.sln
 
                         if (obfuClasses)
                             project = await ObfuscateSyntaxNodes<ClassDeclarationSyntax>(project, documentId);
-                       
+
 
                     }
 
