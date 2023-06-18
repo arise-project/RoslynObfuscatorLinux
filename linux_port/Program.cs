@@ -20,6 +20,12 @@ namespace RoslynObfuscatorLinux
             return mixed;
         }
 ";
+
+        public static bool obfuMethods { get; private set; }
+        public static bool obfuStrings { get; private set; }
+        public static bool obfuClasses { get; private set; }
+        public static bool obfuVars { get; private set; }
+
         static async Task Main(string[] args)
         {
             if (args.Length == 0)
@@ -30,10 +36,10 @@ namespace RoslynObfuscatorLinux
 
             var solutionPath = "";
 
-            bool obfuMethods = false;
-            bool obfuStrings = false;
-            bool obfuClasses = false;
-            bool obfuVars = false;
+            obfuMethods = false;
+            obfuStrings = false;
+            obfuClasses = false;
+            obfuVars = false;
 
             solutionPath = args[0];
 
@@ -120,7 +126,7 @@ namespace RoslynObfuscatorLinux
                             }
 
                             #region stringObfuscation 
-                            var stringObfu = new Traverser();
+                            var stringObfu = new Rewriter();
 
                             stringObfu.Visit(orgRoot);
 
