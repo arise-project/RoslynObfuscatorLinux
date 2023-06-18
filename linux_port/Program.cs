@@ -64,6 +64,8 @@ namespace RoslynObfuscatorLinux
             }
 
 
+            // https://github.com/xoofx/Broslyn
+            // https://github.com/RendleLabs/LegacyWorkspaceLoader
             // MSBuild 15.0 https://gist.github.com/DustinCampbell/32cd69d04ea1c08a16ae5c4cd21dd3a3
             using (MSBuildWorkspace workspace = MSBuildWorkspace.Create())
             {
