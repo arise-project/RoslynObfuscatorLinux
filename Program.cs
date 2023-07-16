@@ -13,7 +13,7 @@ namespace RoslynObfuscatorLinux
             if (args.Length == 0)
             {
                 Help.Print();
-                args = new string[] { @"C:\Users\epiro\Documents\proj\switch_knife\SwitchKnifeApp.sln" };
+                args = new string[] { @"C:\Users\epiro\Documents\proj\Asopse.Pdf.Desktop\Aspose.PDF.Desktop.sln" };
             }
 
             var solutionPath = "";

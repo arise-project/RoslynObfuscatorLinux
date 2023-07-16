@@ -42,6 +42,12 @@ namespace RoslynObfuscatorLinux
                 Console.WriteLine($"Finished loading solution '{solutionPath}'");
 
                 var mainTrigger = false;
+                Console.WriteLine();
+                foreach (var diag in (solution.Workspace as bb::Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace)?.Diagnostics )
+                {
+                    Console.WriteLine($"WARN : {diag.Message}");
+                    Console.WriteLine();
+                }
 
                 foreach (var project in solution.Projects)
                 {
