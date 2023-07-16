@@ -1,5 +1,6 @@
 extern alias bb;
 using System.Text;
+using Microsoft.Build.Locator;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -30,6 +31,9 @@ namespace RoslynObfuscatorLinux
 
         public async Task Walk()
         {
+            //https://stackoverflow.com/questions/69297342/can-not-get-roslyn-to-work-with-net-5-project
+            MSBuildLocator.RegisterDefaults();
+
             Console.WriteLine($"Loading solution '{solutionPath}'");
 
             using (bb::Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace workspace = bb::Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create())

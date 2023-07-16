@@ -10,10 +10,13 @@ namespace RoslynObfuscatorLinux
 
         static async Task Main(string[] args)
         {
+            //https://github.com/dotnet/docfx/issues/1752
+            Environment.SetEnvironmentVariable("MSBuildSDKsPath", @"C:\Program Files\dotnet\sdk\7.0.302\Sdks");
+
             if (args.Length == 0)
             {
                 Help.Print();
-                args = new string[] { @"C:\Users\epiro\Documents\proj\Asopse.Pdf.Desktop\Aspose.PDF.Desktop.sln" };
+                args = new string[] { @"C:\Users\epiro\Documents\proj\switch_knife\SwitchKnifeApp.sln" };
             }
 
             var solutionPath = "";
